@@ -148,7 +148,8 @@ After the workflow creates a PR in the BCR:
 
 **Version already exists:**
 - BCR is add-only; you cannot replace existing versions
-- If a fix is needed, create a new version (e.g., `1.75.0.bcr.1`)
+- If a fix is needed for an existing release, create a patch release following semantic versioning (e.g., `1.75.1`)
+- Alternatively, use the `.bcr.N` suffix format for BCR-specific patches (e.g., `1.75.0.bcr.1`) when the upstream version cannot be changed
 
 ### Getting Help
 

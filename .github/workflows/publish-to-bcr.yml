@@ -23,9 +23,7 @@ jobs:
     uses: bazel-contrib/publish-to-bcr/.github/workflows/publish.yaml@v6
     with:
       tag_name: ${{ github.event_name == 'release' && github.event.release.tag_name || inputs.tag_name }}
-      # Fork of BCR where the PR will be created
-      # IMPORTANT: Replace with your fork before using this workflow
-      # Example: your-org/bazel-central-registry
+      # Fork of BCR where the PR will be created (grpc organization fork)
       registry_fork: grpc/bazel-central-registry
       # Generate attestations for provenance
       attest: true
