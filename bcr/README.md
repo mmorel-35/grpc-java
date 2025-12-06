@@ -75,10 +75,9 @@ Fine-grained tokens are not fully supported yet because they cannot open pull re
 The workflow needs a fork of the Bazel Central Registry to create pull requests:
 
 1. One of the maintainers should fork https://github.com/bazelbuild/bazel-central-registry
-2. The fork should be under the grpc organization: `grpc/bazel-central-registry`
-3. Update the workflow file if using a different fork location
+2. Update the workflow file (`.github/workflows/publish-to-bcr.yml`) with your fork location in the `registry_fork` parameter (e.g., `your-org/bazel-central-registry`)
 
-**Note:** The workflow currently references `grpc/bazel-central-registry` in the `registry_fork` parameter. Update this if your fork is in a different location.
+**Note:** The `registry_fork` parameter in the workflow file must be updated with the actual fork location before the workflow can be used.
 
 #### 4. Verify Workflow Permissions
 
