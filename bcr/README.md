@@ -168,6 +168,21 @@ The following people are listed as maintainers for grpc-java in the BCR and will
 
 Maintainers have approval rights for BCR PRs related to grpc-java, even without direct write access to the BCR repository.
 
+## Patches
+
+The BCR may include patches to the grpc-java module to ensure compatibility with the rest of the BCR ecosystem. These patches are typically applied by BCR maintainers and may include:
+
+- Updating dependency versions to use BCR-compatible versions
+- Adding missing dependencies required for Bazel module builds
+- Adjusting build configurations for BCR compatibility
+
+**Note:** If you need to include custom patches with your release, you can add them to the `.bcr/patches/` directory in the grpc-java repository. All patches must:
+- Have the `.patch` extension
+- Be in the `-p1` format (apply from the repository root)
+- Be included in the `source.json` file's `patches` section
+
+The publish-to-bcr workflow will automatically include any patches found in `.bcr/patches/` when creating the BCR entry.
+
 ## Module Structure
 
 grpc-java is published as a single module to the BCR:
