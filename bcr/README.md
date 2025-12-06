@@ -16,7 +16,7 @@ The publishing process is automated through the GitHub Actions workflow located 
 2. **Can be manually triggered** via workflow_dispatch for re-runs or troubleshooting
 3. **Uses the official publish-to-bcr action** from bazel-contrib
 4. **Generates attestations** for release provenance and security
-5. **Creates a pull request** to the Bazel Central Registry with the new version
+5. **Creates a pull request** directly to the official Bazel Central Registry (https://github.com/bazelbuild/bazel-central-registry) with the new version
 
 ### BCR Configuration Files
 
@@ -70,16 +70,7 @@ Fine-grained tokens are not fully supported yet because they cannot open pull re
 4. Value: Paste the PAT you created
 5. Click "Add secret"
 
-#### 3. Set Up BCR Fork (One-time Setup)
-
-The workflow needs a fork of the Bazel Central Registry to create pull requests:
-
-1. One of the maintainers should fork https://github.com/bazelbuild/bazel-central-registry
-2. Update the workflow file (`.github/workflows/publish-to-bcr.yml`) with your fork location in the `registry_fork` parameter (e.g., `your-org/bazel-central-registry`)
-
-**Note:** The `registry_fork` parameter in the workflow file must be updated with the actual fork location before the workflow can be used.
-
-#### 4. Verify Workflow Permissions
+#### 3. Verify Workflow Permissions
 
 Ensure the workflow has the necessary permissions in the repository settings:
 
