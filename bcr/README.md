@@ -148,8 +148,8 @@ After the workflow creates a PR in the BCR:
 
 **Version already exists:**
 - BCR is add-only; you cannot replace existing versions
-- If a fix is needed for an existing release, create a patch release following semantic versioning (e.g., `1.75.1`)
-- Alternatively, use the `.bcr.N` suffix format for BCR-specific patches (e.g., `1.75.0.bcr.1`) when the upstream version cannot be changed
+- If a fix is needed, it should be fixed upstream and a new version submitted
+- If the fix is only in BCR patches (nothing to fix upstream), use the `.bcr.N` suffix format (e.g., `1.75.0.bcr.1`)
 
 ### Getting Help
 
@@ -180,7 +180,7 @@ The BCR may include patches to the grpc-java module to ensure compatibility with
 **Note:** If you need to include custom patches with your release, you can add them to the `.bcr/patches/` directory in the grpc-java repository. All patches must:
 - Have the `.patch` extension
 - Be in the `-p1` format (apply from the repository root)
-- Be included in the `source.json` file's `patches` section
+- Be listed in the BCR entry's `source.json` file (automatically handled by the publish-to-bcr workflow)
 
 The publish-to-bcr workflow will automatically include any patches found in `.bcr/patches/` when creating the BCR entry.
 
