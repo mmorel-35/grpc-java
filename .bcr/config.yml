@@ -1,0 +1,11 @@
+# BCR configuration for grpc-java
+# This file can be used to override default behavior
+
+# fixedReleaser:
+#   login: <GITHUB_USERNAME>
+#   email: <EMAIL>
+
+# If you have multiple modules to publish, specify them here:
+# moduleRoots:
+#   - "."
+#   - "sub/module"
